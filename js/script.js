@@ -38,8 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
             const currentRow = table.rows[table.rows.length - 1];
             const cell = currentRow.insertCell(-1);
             const img = document.createElement("img");
-
-            img.loading = "lazy";
 			
 			let imgUrl;
 
