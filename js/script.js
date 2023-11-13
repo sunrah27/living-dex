@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const cell = currentRow.insertCell(-1);
             const img = document.createElement("img");
 			
+            img.loading = "lazy";
 			let imgUrl;
 
 			if (i > 999) {
@@ -52,5 +53,12 @@ document.addEventListener("DOMContentLoaded", function () {
             cell.appendChild(img);
         }
     }
+    container.addEventListener("click", function (event) {
+        const target = event.target;
+
+        if (target.tagName === "IMG") {
+            target.classList.toggle("selected");
+        }
+    })
 });
 

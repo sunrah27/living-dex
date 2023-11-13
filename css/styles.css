@@ -1,8 +1,35 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #ddd;
     margin: 0;
     padding: 20px;
+    display: flex;
+}
+
+#leftnavplaceholder {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    flex: 0 0 250px;
+}
+
+#leftNavPlaceholder ul {
+    background-color: rgb(133, 40, 40);
+    list-style: none;
+    margin: -20px;
+    padding-top: 20px;
+    width: 400px;
+    height: 100%;
+}
+
+#leftNavPlaceholder ul li h1 {
+    color: white;
+    font-size: 34px;
+}
+
+#leftNavPlaceholder ul li a {
+    font-size: 24px;
+    color: white;
 }
 
 #pokemonTableContainer {
@@ -13,7 +40,7 @@ body {
 
 .pokemonBox {
     border: 2px solid #fff;
-    padding: 0 10px 10px 10px;
+    padding: 0;
     margin: 10px;
     flex: 0 0 calc((100% / 6) - 20px); /* Adjust the calculation as needed */
 }
@@ -24,10 +51,24 @@ body {
 }
 
 .pokemonTable img {
-    max-width: 100px;
+    width: 100px;
     height: auto;
     display: block;
-    margin: auto;
+    margin: 2px;
+}
+
+.pokemonTable img.selected {
+    filter: brightness(70%); /* Darken the image */
+}
+
+.pokemonTable img.selected::after {
+    content: '\2714'; /* Unicode character for a green tick */
+    font-size: 24px;
+    color: green;
+    position: absolute;
+    top: auto;
+    left: auto;
+    transform: translate(-50%, -50%);
 }
 
 .pokemonBox h2 {
@@ -36,6 +77,5 @@ body {
     text-align: left;
     font-size: 16px;
     color: #333;
-    background: linear-gradient(to right, #fff, #fff);
-    border-radius: 5px;
+    background: linear-gradient(to right, #fff, #ddd);
 }
